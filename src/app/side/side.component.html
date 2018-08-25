@@ -1,0 +1,24 @@
+<div class="comment">
+    <textarea row="4" nz-input [(ngModel)]="comment" (ngModelChange)="onChange($event)"></textarea>
+</div>
+<div class="gametree">
+    <nz-tree
+             [(ngModel)]="nodes"
+             [nzShowLine]="true"
+             [nzDefaultExpandedKeys]="expandKeys"
+             (nzExpandChange)="mouseAction('expand',$event)"
+             (nzDblClick)="mouseAction('dblclick',$event)"
+             (nzContextMenu)="mouseAction('contextmenu', $event)"
+             (nzClick)="mouseAction('click',$event)">
+             <ng-template #nzTreeTemplate let-node>
+                <span class="custom-node" [class.active]="node.isSelected">
+                  <span>
+                    <i class="icon info" *ngIf="node.origin.type === 'info'">i</i>
+                    <i class="icon black" *ngIf="node.origin.type === 'black'"></i>
+                    <i class="icon white" *ngIf="node.origin.type === 'white'"></i> 
+                    <span [class.last]="node.origin.isLast">{{node.title}}</span>
+                  </span>
+                </span>
+              </ng-template>
+    </nz-tree>
+</div>

@@ -1,0 +1,51 @@
+<div class="toolbar">
+  <ul>
+    <li [class.disabled]="!manager.canUndo()">
+      <a nz-tooltip nzTitle="undo" (click)="manager.undo()">
+        <i class="anticon anticon-rollback"></i>
+      </a>
+    </li>
+    <li>
+      <a nz-tooltip nzTitle="redo" (click)="manager.redo()">
+        <i class="anticon anticon-rollback flipH"></i>
+      </a>
+    </li>
+    <li>
+      <a nz-tooltip nzTitle="first move" (click)="manager.backward()">
+        <i class="anticon anticon-fast-backward"></i>
+      </a>
+    </li>
+    <li>
+      <a nz-tooltip nzTitle="fast backward" (click)="manager.backward(20)">
+        <i class="anticon anticon-backward"></i>
+      </a>
+    </li>
+    <li>
+      <a nz-tooltip nzTitle="step backward" (click)="manager.backward(1)">
+        <i class="anticon anticon-caret-left"></i>
+      </a>
+    </li>
+    <li>
+      <a nz-tooltip nzTitle="step forward" (click)="manager.forward(1)">
+        <i class="anticon anticon-caret-right"></i>
+      </a>
+    </li>
+    <li>
+      <a nz-tooltip nzTitle="fast forward" (click)="manager.forward(20)">
+        <i class="anticon anticon-forward"></i>
+      </a>
+    </li>
+    <li>
+      <a nz-tooltip nzTitle="last move" (click)="manager.forward()">
+        <i class="anticon anticon-fast-forward"></i>
+      </a>
+    </li>
+    <li class="stepinput">
+        <nz-input-number [(ngModel)]="targetStep" [nzMin]="0" [nzMax]="maxStep" [nzSize]="'small'" [nzStep]="1"></nz-input-number>
+    </li>
+    <li>
+        <a (click)="jump()" nz-tooltip nzTitle="Go" ><i class="anticon anticon-enter"></i></a>
+    </li>
+  </ul>
+
+</div>

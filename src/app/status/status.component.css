@@ -1,0 +1,28 @@
+.footer{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+.footer .message{
+    float: left;
+    text-align: left;
+    height:100%;
+    vertical-align: middle;
+    width: 50%;
+}
+.footer ul{
+    float: right;
+    list-style: none;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 50%;
+}
+.footer ul li{
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    text-align: left;
+}

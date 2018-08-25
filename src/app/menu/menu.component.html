@@ -1,0 +1,134 @@
+<div class="menu">
+  <ul>
+    <li>
+      <nz-dropdown [nzTrigger]="'click'">
+        <a nz-dropdown>
+          File
+          <i class="anticon anticon-down"></i>
+        </a>
+        <ul nz-menu>
+          <li nz-menu-item (click)="newGame()">New</li>
+          <li nz-menu-item>Save As (todo)</li>
+          <li nz-menu-divider></li>
+          <li nz-menu-item>Export (todo)</li>
+        </ul>
+      </nz-dropdown>
+    </li>
+    <li>
+      <nz-dropdown [nzTrigger]="'click'">
+        <a nz-dropdown>
+          Edit
+          <i class="anticon anticon-down"></i>
+        </a>
+        <ul nz-menu>
+          <li nz-menu-item (click)="undo()">Undo</li>
+          <li nz-menu-item (click)="redo()">Redo</li>
+          <li nz-menu-divider></li>
+          <li nz-menu-item>Delete (todo)</li>
+        </ul>
+      </nz-dropdown>
+    </li>
+    <li>
+      <nz-dropdown [nzTrigger]="'click'">
+        <a nz-dropdown>
+          Move
+          <i class="anticon anticon-down"></i>
+        </a>
+        <ul nz-menu>
+          <li nz-menu-item (click)="forward(1)">Forward</li>
+          <li nz-menu-item (click)="forward(5)">Forward 5</li>
+          <li nz-menu-item (click)="forward(20)">Forward 20</li>
+          <li nz-menu-item (click)="forward()">End</li>
+          <li nz-menu-divider></li>
+          <li nz-menu-item (click)="backward(1)">Backward</li>
+          <li nz-menu-item (click)="backward(5)">Backward 5</li>
+          <li nz-menu-item (click)="backward(20)">Backward 20</li>
+          <li nz-menu-item (click)="backward()">Start</li>
+          <li nz-menu-divider></li>
+          <li nz-menu-item>Next Branch (todo)</li>
+          <li nz-menu-item>Previous Branch (todo)</li>
+        </ul>
+      </nz-dropdown>
+    </li>
+    <li>
+      <nz-dropdown [nzTrigger]="'click'">
+        <a nz-dropdown>
+          View
+          <i class="anticon anticon-down"></i>
+        </a>
+        <ul nz-menu>
+          <li nz-submenu>
+            <span title>Background Color</span>
+            <ul class="subsubmenu">
+              <li nz-menu-item (click)="setBackground('None')">
+                <i *ngIf="background === 'None'" class="anticon anticon-check-circle-o"></i>
+                <i *ngIf="background !== 'None'" class="anticon"></i>
+                <span>None</span>
+              </li>
+              <li nz-menu-item (click)="setBackground('White')">
+                <i *ngIf="background === 'White'" class="anticon anticon-check-circle-o"></i>
+                <i *ngIf="background !== 'White'" class="anticon"></i>
+                <span>White</span>
+              </li>
+              <li nz-menu-item (click)="setBackground('Wood')">
+                <i *ngIf="background === 'Wood'" class="anticon anticon-check-circle-o"></i>
+                <i *ngIf="background !== 'Wood'" class="anticon"></i>
+                <span>Wood</span>
+              </li>
+            </ul>
+          </li>
+          <li nz-menu-item>Stone Style (todo)</li>
+          <li nz-menu-divider></li>
+          <li nz-submenu>
+            <span title>Show Step Number</span>
+            <ul class="subsubmenu">
+              <li nz-menu-item (click)="manager.updateShowLimit(0)">
+                <i *ngIf="manager.showStepLimit() === 0" class="anticon anticon-check-circle-o"></i>
+                <i *ngIf="manager.showStepLimit() !== 0" class="anticon"></i>
+                None
+              </li>
+              <li nz-menu-item (click)="manager.updateShowLimit(5)">
+                <i *ngIf="manager.showStepLimit() === 5" class="anticon anticon-check-circle-o"></i>
+                <i *ngIf="manager.showStepLimit() !== 5" class="anticon"></i>
+                Last 5
+              </li>
+              <li nz-menu-item (click)="manager.updateShowLimit(20)">
+                <i *ngIf="manager.showStepLimit() === 20" class="anticon anticon-check-circle-o"></i>
+                <i *ngIf="manager.showStepLimit() !== 20" class="anticon"></i>
+                Last 20</li>
+              <li nz-menu-item (click)="manager.updateShowLimit(-1)">
+                <i *ngIf="manager.showStepLimit() === -1" class="anticon anticon-check-circle-o"></i>
+                <i *ngIf="manager.showStepLimit() !== -1" class="anticon"></i>
+                All</li>
+            </ul>
+          </li>
+        </ul>
+      </nz-dropdown>
+    </li>
+    <li>
+      <nz-dropdown [nzTrigger]="'click'">
+        <a nz-dropdown>
+          Tool
+          <i class="anticon anticon-down"></i>
+        </a>
+        <ul nz-menu>
+          <li nz-menu-item>Count (todo)</li>
+        </ul>
+      </nz-dropdown>
+    </li>
+    <li>
+      <nz-dropdown [nzTrigger]="'click'">
+        <a nz-dropdown>
+          Help
+          <i class="anticon anticon-down"></i>
+        </a>
+        <ul nz-menu>
+          <li nz-menu-item>Tutorial (todo)</li>
+          <li nz-menu-divider></li>
+          <li nz-menu-item (click)="about()">About</li>
+        </ul>
+      </nz-dropdown>
+    </li>
+  </ul>
+
+</div>
