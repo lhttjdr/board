@@ -13,7 +13,7 @@ export class MenuComponent implements OnInit {
 
   background: string;
 
-  constructor(private manager: ManagerService, private modal: NzModalService) {
+  constructor(public manager: ManagerService, private modal: NzModalService) {
     switch (this.manager.current().background) {
       case BACKGROUND.None:
         this.background = 'None';

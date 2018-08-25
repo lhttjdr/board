@@ -17,7 +17,7 @@ export class ToolComponent implements OnInit {
     return Math.max(this.currentPath.length, this.leftmost.length) - 1;
   }
 
-  constructor(private manager: ManagerService) {
+  constructor(public manager: ManagerService) {
     this.manager.setToolBarHandler((c: Ptr[], l: Ptr[], s: number) => {
       this.leftmost = l;
       this.currentPath = c;
